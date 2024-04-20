@@ -15,6 +15,14 @@ import java.util.List;
 @RestControllerAdvice
 public class RestControllerExceptionHandler {
 
+    @ExceptionHandler(Exception.class)
+    public ResponseEntity<CmlibErrorResponse> globalRequestException(final Exception ex) {
+        ex.printStackTrace();
+        return ResponseEntity
+                .status(500)
+                .body(new CmlibErrorResponse(500, ex.getMessage()));
+    }
+
     // Exception
     @ExceptionHandler(CmlibException.class)
     public ResponseEntity<CmlibErrorResponse> handleGlobalException(CmlibException ex) {
