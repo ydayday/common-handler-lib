@@ -79,7 +79,7 @@ public class RequestAndResponseLoggingFilter extends OncePerRequestFilter {
     private String getResponseBody(ContentCachingResponseWrapper response) throws UnsupportedEncodingException {
         byte[] buf = response.getContentAsByteArray();
         if (buf.length > 0) {
-            return new String(buf, 0, buf.length, response.getCharacterEncoding());
+            return new String(buf, 0, buf.length, "UTF-8");
         }
         return "";
     }
@@ -87,7 +87,7 @@ public class RequestAndResponseLoggingFilter extends OncePerRequestFilter {
     private String getResponseBody(ContentCachingRequestWrapper request) throws UnsupportedEncodingException {
         byte[] buf = request.getContentAsByteArray();
         if (buf.length > 0) {
-            return new String(buf, 0, buf.length, request.getCharacterEncoding());
+            return new String(buf, 0, buf.length, "UTF-8");
         }
         return "";
     }
