@@ -1,9 +1,8 @@
-
-
-logging:
-  level:
-    root: info
 server:
   servlet:
     encoding:
       charset: UTF-8
+
+logging:
+  level:
+    root: info
