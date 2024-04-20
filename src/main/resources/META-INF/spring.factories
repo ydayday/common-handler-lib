@@ -1,1 +1,3 @@
-org.springframework.boot.autoconfigure.EnableAutoConfiguration=com.ydayday.cmlib.config.LoggingAutoConfiguration
+org.springframework.boot.autoconfigure.EnableAutoConfiguration=\
+  com.ydayday.cmlib.config.LoggingAutoConfiguration,\
+  com.ydayday.cmlib.config.RestTemplateConfiguration
